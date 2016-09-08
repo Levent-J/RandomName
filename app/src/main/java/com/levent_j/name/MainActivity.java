@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -77,7 +78,6 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
     }
 
     @OnClick(R.id.rb_name_random)
