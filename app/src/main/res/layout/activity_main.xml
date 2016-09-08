@@ -1,70 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.levent_j.name.MainActivity">
+    android:orientation="vertical"
+    tools:context="com.levent_j.name.MainActivity"
+    android:weightSum="1"
+    android:gravity="center">
 
-    <RadioButton
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="男"
-        android:id="@+id/rb_sex_man"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:checked="true" />
+        android:layout_weight="0.52">
+        <RadioButton
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="随机名"
+            android:id="@+id/rb_name_random"
+            android:checked="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/rb_name_3"
+            android:layout_toStartOf="@+id/rb_name_3" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="女"
-        android:id="@+id/rb_sex_woman"
-        android:layout_alignTop="@+id/rb_sex_man"
-        android:layout_toRightOf="@+id/rb_sex_man"
-        android:layout_toEndOf="@+id/rb_sex_man"
-        android:checked="false" />
+        <RadioButton
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="固定名"
+            android:id="@+id/rb_name_static"
+            android:checked="false"
+            android:layout_alignTop="@+id/rb_name_random"
+            android:layout_toRightOf="@+id/rb_name_random"
+            android:layout_toEndOf="@+id/rb_name_random" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="随！"
-        android:id="@+id/btn_create"
-        android:layout_below="@+id/rb_name_2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        <Button
+            android:textSize="18sp"
+            android:background="@color/colorAccent"
+            android:textColor="@color/colorText"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="起名"
+            android:id="@+id/btn_create"
+            android:layout_below="@+id/rb_name_random"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="48dp" />
+
+        <RadioButton
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="单姓"
+            android:id="@+id/rb_name_2"
+            android:checked="true"
+            android:layout_marginLeft="33dp"
+            android:layout_marginStart="33dp"
+            android:layout_alignTop="@+id/rb_name_3"
+            android:layout_alignLeft="@+id/btn_create"
+            android:layout_alignStart="@+id/btn_create" />
+
+        <RadioButton
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="复姓"
+            android:id="@+id/rb_name_3"
+            android:checked="false"
+            android:layout_marginTop="36dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/rb_name_2"
+            android:layout_toEndOf="@+id/rb_name_2" />
+    </RelativeLayout>
+
 
     <TextView
+        android:textSize="26sp"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="名字"
         android:id="@+id/tv_name"
-        android:layout_below="@+id/btn_create"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="122dp" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="单姓"
-        android:id="@+id/rb_name_2"
-        android:checked="true"
-        android:layout_below="@+id/rb_sex_man"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="复姓"
-        android:id="@+id/rb_name_3"
-        android:layout_alignTop="@+id/rb_name_2"
-        android:layout_toRightOf="@+id/rb_name_2"
-        android:layout_toEndOf="@+id/rb_name_2"
-        android:checked="false" />
 
-</RelativeLayout>
+</LinearLayout>
